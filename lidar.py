@@ -18,7 +18,8 @@ def getTFminiData():
                     file.write(distance+"\n")
                 print(distance)
                 
-
+#ttyS0
+#ttyAMA0
 
 if __name__ == '__main__':
     try:
