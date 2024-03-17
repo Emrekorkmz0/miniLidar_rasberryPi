@@ -3,6 +3,7 @@ import serial
 
 ser = serial.Serial("/dev/ttyAMA0", 115200)
 
+    
 def getTFminiData():
     while True:
         count = ser.in_waiting
@@ -13,6 +14,8 @@ def getTFminiData():
                 low = int(recv[2].encode('hex'), 16)
                 high = int(recv[3].encode('hex'), 16)
                 distance = low + high * 256
+                with open("lidar.txt", "w") as file:
+                    file.write(distance+"\n")
                 print(distance)
                 
 
